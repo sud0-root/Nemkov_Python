@@ -1,30 +1,23 @@
 # Даны три целых числа: A, B, C. Проверить истинность высказывания: «Ровно одно
 # из чисел A, B, C положительное».
 
-def check_numbers():
-    # Создаем бесконечный цикл, который будет выполнять пока не будут введены 3 целых числа.
-    while True:
-        try:
-            # Вводим три числа
-            a = int(input("Введите число A: "))
-            b = int(input("Введите число B: "))
-            c = int(input("Введите число C: "))
-            break
-        # Если происходит ошибка ввода пользователя, то выполняется вывод ошибки.
-        except ValueError:
-            print("Пожалуйста, введите целые числа.")
 
-    # Задаем переменную равную 0, которая считает сколько чисел является положительными.
-    positive_count = 0
-    # Проверяем является ли каждое число положительным. Если число положительно то прибавляем 1 к positive_count.
-    if a > 0:
-        positive_count += 1
-    if b > 0:
-        positive_count += 1
-    if c > 0:
-        positive_count += 1
+while True:
+    try:
+        a = int(input("Введите число A: "))
+        b = int(input("Введите число B: "))
+        c = int(input("Введите число C: "))
+        break
+    except ValueError:
+        print("Пожалуйста, введите целые числа.")
 
-    # Если ровно одно число положительно выводится true, иначе false.
-    return positive_count == 1
+positive_count = 0
+if a > 0:
+    positive_count += 1
+if b > 0:
+    positive_count += 1
+if c > 0:
+    positive_count += 1
 
-print(check_numbers())
+print (positive_count == 1)
+
