@@ -9,8 +9,17 @@ def max_squares(A, B):
     num_squares = A // side * B // side
     return num_squares
 
-A = int(input("Введите длину первой стороны прямоугольника: "))
-B = int(input("Введите длину второй стороны прямоугольника: "))
+while True:
+    try:
+        A = int(input("Введите длину первой стороны прямоугольника: "))
+        B = int(input("Введите длину второй стороны прямоугольника: "))
 
-max_squares  = max_squares(A, B)
-print(f"Количество квадратов, которое можно получить: {max_squares}")
+        if A <= 0 or B <= 0:
+            print("Ошибка: Введено ненатуральное число. Попробуйте снова.")
+            continue
+
+        num_squares = max_squares(A, B)
+        print(f"Количество квадратов, которое можно получить: {num_squares}")
+        break
+    except ValueError:
+        print("Ошибка: Введено нецелое число. Попробуйте снова.")
